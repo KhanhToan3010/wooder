@@ -1,0 +1,94 @@
+// css img, button, heading, title, input, elements,...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+// colors (tuỳ chỉnh)
+.--white-cl {
+    color: $white-cl;
+}
+
+.--black-cl {
+    color: $black-cl;
+}
+
+// css article (nội dung chi tiết bài viết)
+.heading {
+    font-family: pb;
+    &.--h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+    }
+    &.--h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+    }
+}
+
+.btnmore {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    span {
+        @include text(14px, pb, normal, $black-cl, uppercase);
+        letter-spacing: 2.8px;
+        margin-right: 10px;
+        &::after {
+            content: "";
+            display: block;
+            background-color: $yellow-cl;
+            height: 2px;
+            width: 30px;
+        }
+    }
+    img {
+        width: 30px;
+        transform: translateX(0);
+        @include transition($t);
+    }
+    &:hover {
+        img {
+            transform: translateX(10px);
+            @include transition($t);
+        }
+    }
+}
+
+.titlemain {
+    @include text(40px, pb, 83px, $black-cl, uppercase);
+    letter-spacing: 2.8px;
+    display: flex;
+    align-items: center;
+    @include sm {
+        font-size: 32px;
+    }
+}
+
+.btnmain {
+    @include mid(true);
+    width: 256px;
+    height: 48px;
+    // padding: 0px 30px;
+    border: 1px solid $white-cl;
+    @include transition($t);
+    &:hover {
+        background-color: $yellow-cl;
+    }
+    @include xs {
+        width: 200px;
+    }
+}
